@@ -6,10 +6,12 @@ import {
   Flex,
   Stack,
   Button,
+  SimpleGrid,
 } from "@chakra-ui/react";
 
 import Container from "../components/Container";
 import Layout from "../components/Layout";
+import { GalleryItem } from "../components/GalleryItem";
 
 export default function Index() {
   const { colorMode } = useColorMode();
@@ -17,9 +19,40 @@ export default function Index() {
     light: "gray.700",
     dark: "gray.400",
   };
+
+  const cards = [
+    {
+      cardImage:
+        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+    },
+    {
+      cardImage:
+        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+    },
+    {
+      cardImage:
+        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+    },
+    {
+      cardImage:
+        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+    },
+    {
+      cardImage:
+        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+    },
+    {
+      cardImage:
+        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+    },
+  ];
   return (
     <Layout>
-      <Heading>This is the Example Page</Heading>
+      <SimpleGrid columns={[1, 2, 4, 6]} spacing={0}>
+        {cards.map((item, index) => (
+          <GalleryItem cardImage={item.cardImage} />
+        ))}
+      </SimpleGrid>
     </Layout>
     // <Container>
     //   <Head>
