@@ -73,7 +73,7 @@ export default function withAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg={useColorModeValue("purple.100", "purple.900")} px={4}>
+    <Box bg={useColorModeValue("purple.700")} px={4}>
       <Container maxW="7xl">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
