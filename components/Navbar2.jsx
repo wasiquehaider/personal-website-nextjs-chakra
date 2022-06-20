@@ -14,14 +14,18 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Container,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  EmailIcon,
 } from "@chakra-ui/icons";
+import { BiLogIn } from "react-icons/bi";
 import DarkModeSwitch from "./DarkModeSwitch";
+import { theme } from "@chakra-ui/react";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -29,7 +33,7 @@ export default function WithSubnavigation() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue("white", "purple.800")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
@@ -53,50 +57,48 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
+        <Container maxW="4xl" flex={{ base: 1 }} flexDirection={"row"}>
+          <Flex
+            flex={{ base: 1 }}
+            justify={{ base: "center", md: "start" }}
+            alignItems={{ base: "center", md: "start" }}
           >
-            Logo
-          </Text>
+            <Text
+              textAlign={useBreakpointValue({ base: "center", md: "left" })}
+              fontFamily={"heading"}
+              color={useColorModeValue("gray.800", "white")}
+            >
+              Logo
+            </Text>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
+            <Flex display={{ base: "none", md: "flex" }} ml={10}>
+              <DesktopNav />
+            </Flex>
+            <Button
+              leftIcon={<BiLogIn />}
+              backgroundColor="transparent"
+              fontSize={theme.fontSizes["xs"]}
+            >
+              Login / Register
+            </Button>
           </Flex>
-        </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
+          {/* <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={"flex-end"}
+            direction={"row"}
+            spacing={6}
           >
-            Sign In
-          </Button>
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
-          <DarkModeSwitch />
-        </Stack>
+            <Button
+              leftIcon={<BiLogIn />}
+              backgroundColor="transparent"
+              fontSize={theme.fontSizes["xs"]}
+            >
+              Login / Register
+            </Button>
+            <DarkModeSwitch />
+          </Stack> */}
+        </Container>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -120,7 +122,7 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
+                fontSize={"xs"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
