@@ -117,7 +117,7 @@ const social = [
 export default function LargeWithLogoLeft() {
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
+      bg={useColorModeValue("white")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
       <Container as={Stack} maxW={"6xl"} py={10}>
@@ -264,6 +264,22 @@ export default function LargeWithLogoLeft() {
           </Stack>
         </SimpleGrid>
       </Container>
+      <Box
+        bg={useColorModeValue("purple.700")}
+        color={useColorModeValue("gray.700", "gray.200")}
+      >
+        <Container
+          as={Stack}
+          maxW={"6xl"}
+          py={4}
+          direction={{ base: "column", md: "row" }}
+          spacing={4}
+          justify={{ base: "center", md: "center" }}
+          align={{ base: "center", md: "center" }}
+        >
+          <Text color={"white"}>​Copyright© 2022 Kamui Store</Text>
+        </Container>
+      </Box>
     </Box>
   );
 }
