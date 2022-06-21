@@ -25,35 +25,41 @@ export default function Index() {
 
   const cards = [
     {
-      cardImage:
-        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+      title: "Fahim Flower Arrangement Vase",
+      price: "AED 120.00",
+      image: "assets/image1.png",
     },
     {
-      cardImage:
-        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+      title: "Fahim Flower Arrangement Vase",
+      price: "AED 120.00",
+      image: "assets/image2.png",
     },
     {
-      cardImage:
-        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+      title: "Fahim Flower Arrangement Vase",
+      price: "AED 120.00",
+      image: "assets/image3.png",
     },
     {
-      cardImage:
-        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+      title: "Fahim Flower Arrangement Vase",
+      price: "AED 120.00",
+      image: "assets/image4.png",
     },
     {
-      cardImage:
-        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+      title: "Fahim Flower Arrangement Vase",
+      price: "AED 120.00",
+      image: "assets/image5.png",
     },
     {
-      cardImage:
-        "https://i.picsum.photos/id/692/200/200.jpg?hmac=PBAPILlS_qaKe0OMYjT0eXnftJjTGdwOgqCQMUVDGbg",
+      title: "Fahim Flower Arrangement Vase",
+      price: "AED 120.00",
+      image: "assets/image1.png",
     },
   ];
   return (
     <Layout>
       <SimpleGrid columns={[1, 2, 4, 5]} spacing={0}>
         {cards.map((item, index) => (
-          <GalleryItem cardImage={item.cardImage} />
+          <GalleryItem item={item} />
         ))}
       </SimpleGrid>
     </Layout>

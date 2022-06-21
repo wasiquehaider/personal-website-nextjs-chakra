@@ -10,8 +10,9 @@ import {
   Text,
   Stack,
 } from "@chakra-ui/react";
+import { theme } from "@chakra-ui/react";
 
-export const GalleryItem = ({ id, title, description, cardImage }) => {
+export const GalleryItem = ({ item }) => {
   return (
     <Flex
       bg="#edf3f8"
@@ -23,7 +24,7 @@ export const GalleryItem = ({ id, title, description, cardImage }) => {
         <Flex h="20em" w="full">
           <Box boxSize="full" shadow="md" borderWidth={1} flex="none">
             <Image
-              src={cardImage}
+              src={item.image}
               alt="carousel image"
               boxSize="full"
               backgroundSize="cover"
@@ -35,9 +36,19 @@ export const GalleryItem = ({ id, title, description, cardImage }) => {
               w="full"
               color="white"
             >
-              <Text fontSize="sm">Fahim Flower Arrangements vase</Text>
-              <Text size="l" color={"white"} fontWeight="bold">
-                AED 120.00
+              <Text
+                fontSize="sm"
+                fontWeight={theme.fontWeights["bold"]}
+                width="50%"
+              >
+                {item.title}
+              </Text>
+              <Text
+                size="l"
+                color={"white"}
+                fontWeight={theme.fontWeights["extrabold"]}
+              >
+                {item.price}
               </Text>
             </Stack>
           </Box>
