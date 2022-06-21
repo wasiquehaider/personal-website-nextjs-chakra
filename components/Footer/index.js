@@ -8,7 +8,13 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  List,
+  ListItem,
+  ListIcon,
+  Image,
+  theme,
 } from "@chakra-ui/react";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 const Logo = (props) => {
   return (
@@ -30,13 +36,83 @@ const Logo = (props) => {
   );
 };
 
-const ListHeader = ({ children }) => {
+const Header = ({ children }) => {
   return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
+    <Text
+      fontWeight={theme.fontWeights["bold"]}
+      fontSize={theme.fontSizes["lg"]}
+      mb={2}
+    >
       {children}
     </Text>
   );
 };
+
+const account = [
+  {
+    label: "My Profile",
+    href: "#",
+  },
+  {
+    label: "My Favorites",
+    href: "#",
+  },
+  {
+    label: "My Orders",
+    href: "#",
+  },
+];
+const about = [
+  {
+    label: "Who We Are",
+    href: "#",
+  },
+  {
+    label: "Contact",
+    href: "#",
+  },
+  {
+    label: "FAQ",
+    href: "#",
+  },
+];
+const shop = [
+  { label: "Ceramic and Pottery", href: "#" },
+  { label: "Crochet and Knit", href: "#" },
+  { label: "Decoupage", href: "#" },
+  { label: "Embroidery", href: "#" },
+  { label: "Flower Arrangement", href: "#" },
+  { label: "Handmade Rugs", href: "#" },
+  { label: "Hawally Industry", href: "#" },
+  { label: "Macrame", href: "#" },
+  { label: "Sewing", href: "#" },
+  { label: "Wicker Industry", href: "#" },
+  { label: "The Puppet Industry", href: "#" },
+  { label: "Painting On Pottery And Pottery", href: "#" },
+];
+
+const social = [
+  {
+    uri: "assets/social/facebook.png",
+    alt: "facebook",
+  },
+  {
+    uri: "assets/social/instagram.png",
+    alt: "instagram",
+  },
+  {
+    uri: "assets/social/linkedin.png",
+    alt: "linkedin",
+  },
+  {
+    uri: "assets/social/twitter.png",
+    alt: "twitter",
+  },
+  {
+    uri: "assets/social/youtube.png",
+    alt: "youtube",
+  },
+];
 
 export default function LargeWithLogoLeft() {
   return (
@@ -46,48 +122,145 @@ export default function LargeWithLogoLeft() {
     >
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
-          templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 1fr 1fr" }}
+          templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 1fr" }}
           spacing={8}
         >
-          <Stack spacing={6}>
+          <Stack spacing={6} borderRightStyle="dashed" borderRightWidth={1}>
             <Box>
               <Logo color={useColorModeValue("gray.700", "white")} />
             </Box>
-            <Text fontSize={"sm"}>
-              © 2022 Chakra Templates. All rights reserved
+            <Text fontSize={theme.fontSizes["sm"]}>
+              Drawing on ceramic and Pottery artifacts is the art of high
+              interest to Arab families and communities, symbolizing the ancient
+              time
             </Text>
+            <Box>
+              <Header pb={2} color="#00DDFF">
+                Paymend Method
+              </Header>
+              <Stack direction="row" spacing={6}>
+                <Image
+                  boxSize="2.5rem"
+                  src={"assets/visa.png"}
+                  alt="Dan Abramov"
+                />
+                <Image
+                  boxSize="2.5rem"
+                  src={"assets/visa.png"}
+                  alt="Dan Abramov"
+                />
+                <Image
+                  boxSize="2.5rem"
+                  src={"assets/visa.png"}
+                  alt="Dan Abramov"
+                />
+                <Image
+                  boxSize="2.5rem"
+                  src={"assets/visa.png"}
+                  alt="Dan Abramov"
+                />
+                <Image
+                  boxSize="2.5rem"
+                  src={"assets/visa.png"}
+                  alt="Dan Abramov"
+                />
+              </Stack>
+              <Stack direction="row" spacing={6}>
+                <Image
+                  boxSize="2.5rem"
+                  src={"assets/visa.png"}
+                  alt="Dan Abramov"
+                />
+                <Image
+                  boxSize="2.5rem"
+                  src={"assets/visa.png"}
+                  alt="Dan Abramov"
+                />
+                <Image
+                  boxSize="2.5rem"
+                  src={"assets/visa.png"}
+                  alt="Dan Abramov"
+                />
+              </Stack>
+            </Box>
+          </Stack>
+
+          <Stack
+            align={"flex-start"}
+            borderRightStyle="dashed"
+            borderRightWidth={1}
+          >
+            <Header>MY ACCOUNT</Header>
+            <List spacing={3}>
+              {account.map((item) => (
+                <ListItem fontSize={theme.fontSizes["xs"]}>
+                  <Link href={item.href}>
+                    <ListIcon as={HiOutlineArrowNarrowRight} />
+                    {item.label}
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+            <Header>ABOUT US</Header>
+            <List spacing={3}>
+              {about.map((item) => (
+                <ListItem fontSize={theme.fontSizes["xs"]}>
+                  <Link href={item.href}>
+                    <ListIcon as={HiOutlineArrowNarrowRight} />
+                    {item.label}
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
+          <Stack
+            align={"flex-start"}
+            borderRightStyle="dashed"
+            borderRightWidth={1}
+          >
+            <Header font>SHOP</Header>
+            <List spacing={3}>
+              {shop.slice(0, 8).map((item) => (
+                <ListItem fontSize={theme.fontSizes["xs"]}>
+                  <Link href={item.href}>
+                    <ListIcon as={HiOutlineArrowNarrowRight} />
+                    {item.label}
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Product</ListHeader>
-            <Link href={"#"}>Overview</Link>
-            <Link href={"#"}>Features</Link>
-            <Link href={"#"}>Tutorials</Link>
-            <Link href={"#"}>Pricing</Link>
-            <Link href={"#"}>Releases</Link>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Company</ListHeader>
-            <Link href={"#"}>About</Link>
-            <Link href={"#"}>Press</Link>
-            <Link href={"#"}>Careers</Link>
-            <Link href={"#"}>Contact</Link>
-            <Link href={"#"}>Partners</Link>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Support</ListHeader>
-            <Link href={"#"}>Help Center</Link>
-            <Link href={"#"}>Terms of Service</Link>
-            <Link href={"#"}>Legal</Link>
-            <Link href={"#"}>Privacy Policy</Link>
-            <Link href={"#"}>Status</Link>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Follow Us</ListHeader>
-            <Link href={"#"}>Facebook</Link>
-            <Link href={"#"}>Twitter</Link>
-            <Link href={"#"}>Dribbble</Link>
-            <Link href={"#"}>Instagram</Link>
-            <Link href={"#"}>LinkedIn</Link>
+            <List spacing={3}>
+              {shop.slice(8, shop.length).map((item) => (
+                <ListItem fontSize={theme.fontSizes["xs"]}>
+                  <Link href={item.href}>
+                    <ListIcon as={HiOutlineArrowNarrowRight} />
+                    {item.label}
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+            <Box>
+              <Header pb={2} color="#00DDFF">
+                Contact us
+              </Header>
+              <Stack direction="row" marginY={5}>
+                <Image
+                  boxSize="1.5rem"
+                  src={"assets/phone.png"}
+                  alt="Dan Abramov"
+                />
+                <Text fontSize={theme.fontSizes["sm"]}>
+                  +32 (0) 487 20 70 10
+                </Text>
+              </Stack>
+              <Stack direction="row" spacing={3}>
+                {social.map((icon) => (
+                  <Image boxSize="1.5rem" src={icon.uri} alt={icon.alt} />
+                ))}
+              </Stack>
+            </Box>
           </Stack>
         </SimpleGrid>
       </Container>
