@@ -10,6 +10,7 @@ import {
   Button,
   SimpleGrid,
   Image,
+  VStack,
 } from "@chakra-ui/react";
 
 import Container from "../components/Container";
@@ -57,16 +58,15 @@ export default function Index() {
   ];
   return (
     <Layout>
-      {/* <SimpleGrid columns={[1, 2, 4, 5]} spacing={0}>
-        {cards.map((item, index) => (
-          <GalleryItem item={item} />
-        ))}
-      </SimpleGrid> */}
-      <Image
-        width={"Full"}
-        src="curve_image.png"
-        alt="Woman paying for a purchase"
-      />
+      <VStack>
+        <Stack>
+          <SimpleGrid columns={[1, 2, 4, 5]} spacing={0}>
+            {cards.map((item, index) => (
+              <GalleryItem item={item} />
+            ))}
+          </SimpleGrid>
+        </Stack>
+      </VStack>
     </Layout>
   );
 }
