@@ -126,7 +126,7 @@ export default function withAction() {
               />
             </ButtonGroup>
             <Button
-              _hover={{ bg: "red" }}
+              _hover={{ bg: "transparent" }}
               _active={{
                 bg: "#dddfe2",
                 transform: "scale(0.98)",
