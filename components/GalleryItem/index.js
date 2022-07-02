@@ -19,10 +19,11 @@ export const GalleryItem = ({ item }) => {
       _dark={{ bg: "#3e3e3e" }}
       alignItems="center"
       justifyContent="flex-end"
+      marginBottom={"1.5rem"}
     >
       <Flex w="full" pos="relative" overflow="hidden">
         <Flex h="20em" w="full">
-          <Box boxSize="full" shadow="md" borderWidth={1} flex="none">
+          <Box boxSize="full" shadow="md" flex="none">
             <Image
               src={item.image}
               alt="carousel image"

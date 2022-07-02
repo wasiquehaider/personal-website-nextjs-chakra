@@ -127,7 +127,7 @@ export default function LargeWithLogoLeft() {
         >
           <Stack spacing={6} borderRightStyle="dashed" borderRightWidth={1}>
             <Box>
-              <Logo color={useColorModeValue("gray.700", "white")} />
+              <Image width="10rem" src={"logo1.png"} alt="Logo" />
             </Box>
             <Text fontSize={theme.fontSizes["sm"]}>
               Drawing on ceramic and Pottery artifacts is the art of high
@@ -193,7 +193,7 @@ export default function LargeWithLogoLeft() {
             <Header>MY ACCOUNT</Header>
             <List spacing={3}>
               {account.map((item) => (
-                <ListItem fontSize={theme.fontSizes["xs"]}>
+                <ListItem key={item.href} fontSize={theme.fontSizes["xs"]}>
                   <Link href={item.href}>
                     <ListIcon as={HiOutlineArrowNarrowRight} />
                     {item.label}
@@ -204,7 +204,7 @@ export default function LargeWithLogoLeft() {
             <Header>ABOUT US</Header>
             <List spacing={3}>
               {about.map((item) => (
-                <ListItem fontSize={theme.fontSizes["xs"]}>
+                <ListItem key={item.label} fontSize={theme.fontSizes["xs"]}>
                   <Link href={item.href}>
                     <ListIcon as={HiOutlineArrowNarrowRight} />
                     {item.label}
@@ -221,7 +221,7 @@ export default function LargeWithLogoLeft() {
             <Header font>SHOP</Header>
             <List spacing={3}>
               {shop.slice(0, 8).map((item) => (
-                <ListItem fontSize={theme.fontSizes["xs"]}>
+                <ListItem key={item.label} fontSize={theme.fontSizes["xs"]}>
                   <Link href={item.href}>
                     <ListIcon as={HiOutlineArrowNarrowRight} />
                     {item.label}
@@ -233,7 +233,7 @@ export default function LargeWithLogoLeft() {
           <Stack align={"flex-start"}>
             <List spacing={3}>
               {shop.slice(8, shop.length).map((item) => (
-                <ListItem fontSize={theme.fontSizes["xs"]}>
+                <ListItem key={item.label} fontSize={theme.fontSizes["xs"]}>
                   <Link href={item.href}>
                     <ListIcon as={HiOutlineArrowNarrowRight} />
                     {item.label}
@@ -257,7 +257,12 @@ export default function LargeWithLogoLeft() {
               </Stack>
               <Stack direction="row" spacing={3}>
                 {social.map((icon) => (
-                  <Image boxSize="1.5rem" src={icon.uri} alt={icon.alt} />
+                  <Image
+                    key={icon.uri}
+                    boxSize="1.5rem"
+                    src={icon.uri}
+                    alt={icon.alt}
+                  />
                 ))}
               </Stack>
             </Box>

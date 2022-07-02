@@ -18,6 +18,7 @@ import {
   Stack,
   Container,
   Text,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons";
 import { BiLogIn } from "react-icons/bi";
@@ -85,17 +86,15 @@ export default function withAction() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Text color={"white"} fontWeight="bold">
-                Logo
-              </Text>
+              <Image width="10rem" src={"logo_white.png"} alt="Logo" />
             </Box>
             <HStack
               as={"nav"}
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {Links.map((link) => (
-                <NavLink key={link} href={link.href}>
+              {Links.map((link, i) => (
+                <NavLink key={i} href={link.href}>
                   {link.label}
                 </NavLink>
               ))}

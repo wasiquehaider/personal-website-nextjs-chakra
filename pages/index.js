@@ -11,61 +11,67 @@ import {
   SimpleGrid,
   Image,
   VStack,
+  theme,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 
-import Container from "../components/Container";
 import Layout from "../components/Layout";
 import { GalleryItem } from "../components/GalleryItem";
+import CollectionItem from "../components/CollectionItem";
+import ProductItem from "../components/ProductItem";
+
+import { cards, collections } from "../data/mockData";
+import BannerSection from "../components/BannerSection";
+import ResponsiveCarousel from "../components/Carousel";
 
 export default function Index() {
-  const { colorMode } = useColorMode();
-  const colorSecondary = {
-    light: "gray.700",
-    dark: "gray.400",
-  };
-
-  const cards = [
-    {
-      title: "Fahim Flower Arrangement Vase",
-      price: "AED 120.00",
-      image: "assets/image1.png",
-    },
-    {
-      title: "Fahim Flower Arrangement Vase",
-      price: "AED 120.00",
-      image: "assets/image2.png",
-    },
-    {
-      title: "Fahim Flower Arrangement Vase",
-      price: "AED 120.00",
-      image: "assets/image3.png",
-    },
-    {
-      title: "Fahim Flower Arrangement Vase",
-      price: "AED 120.00",
-      image: "assets/image4.png",
-    },
-    {
-      title: "Fahim Flower Arrangement Vase",
-      price: "AED 120.00",
-      image: "assets/image5.png",
-    },
-    {
-      title: "Fahim Flower Arrangement Vase",
-      price: "AED 120.00",
-      image: "assets/image1.png",
-    },
-  ];
   return (
     <Layout>
       <VStack>
-        <Stack>
-          <SimpleGrid columns={[1, 2, 4, 5]} spacing={0}>
-            {cards.map((item, index) => (
-              <GalleryItem item={item} />
+        <Hide above="md">
+          <ResponsiveCarousel />
+        </Hide>
+        <Hide below="md">
+          <Stack>
+            <SimpleGrid columns={[1, 2, 4, 5]} spacing={0}>
+              {cards.map((item, index) => (
+                <GalleryItem key={index} item={item} />
+              ))}
+            </SimpleGrid>
+          </Stack>
+        </Hide>
+        <Stack my={20}>
+          <Heading
+            textAlign={"center"}
+            size="lg"
+            fontWeight={theme.fontWeights["extrabold"]}
+          >
+            Browse By Collection
+          </Heading>
+          <SimpleGrid columns={[1, 2, 4]} spacing={10}>
+            {collections.map((item, index) => (
+              <CollectionItem key={index} item={item} />
             ))}
           </SimpleGrid>
         </Stack>
+        <Stack>
+          <Heading
+            textAlign={"center"}
+            size="lg"
+            fontWeight={theme.fontWeights["extrabold"]}
+          >
+            Explore our best-selling products
+          </Heading>
+          <SimpleGrid columns={[1, 2, 4]} spacing={10}>
+            {collections.map((item, index) => (
+              <ProductItem key={index} item={item} />
+            ))}
+          </SimpleGrid>
+        </Stack>
+        {/* <Stack>
+          <BannerSection />
+        </Stack> */}
       </VStack>
     </Layout>
   );

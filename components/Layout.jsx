@@ -1,6 +1,7 @@
 import { Box, Center, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import Footer from "./Footer";
 import NavBar from "./NavBar/index";
+import AdBanner from "./AdBanner";
 
 export default function Layout({ props, children }) {
   return (
@@ -8,8 +9,9 @@ export default function Layout({ props, children }) {
       <Box>
         <NavBar />
         <Center>{children}</Center>
+        <AdBanner bgImage={"url(curve_image.png)"} />
         <Stack>
-          <Image
+          {/* <Image
             width={"Full"}
             src="curve_image.png"
             alt="Woman paying for a purchase"
@@ -21,7 +23,7 @@ export default function Layout({ props, children }) {
             alignItems={"center"}
             justifyContent="center"
             alignSelf={"center"}
-          ></Flex>
+          ></Flex> */}
         </Stack>
         <Footer />
       </Box>
