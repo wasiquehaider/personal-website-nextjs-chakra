@@ -15,7 +15,7 @@ import { FiSearch, FiHeart, FiShoppingCart } from "react-icons/fi";
 
 export default function ProductItem({ item }) {
   return (
-    <Center py={2}>
+    <Center width={"100%"} py={2}>
       <Box
         role={"group"}
         maxW={"330px"}
@@ -29,7 +29,7 @@ export default function ProductItem({ item }) {
         <Box rounded={"lg"} pos={"relative"}>
           <Image
             rounded={"3xl"}
-            width={"15rem"}
+            width={"100%"}
             height={"12rem"}
             objectFit={"cover"}
             src={item.image}
@@ -47,7 +47,7 @@ export default function ProductItem({ item }) {
             }}
           />
         </Flex>
-        <Stack width={"15rem"}>
+        <Stack width={"100%"}>
           <ButtonGroup justifyContent="flex-end">
             <IconButton
               backgroundColor={"transparent"}

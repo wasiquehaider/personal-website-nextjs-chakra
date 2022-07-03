@@ -58,7 +58,7 @@ const BannerSection = ({ bgImage }) => {
               and Pottery
             </Heading>
             <Text
-              maxW={"50%"}
+              width={{ base: "100%", md: "50%" }}
               mb={5}
               textAlign={{
                 base: "center",
@@ -99,12 +99,12 @@ const BannerSection = ({ bgImage }) => {
           <Flex
             w="full"
             h="full"
-            transform={"translateY(-6rem)"}
+            transform={{ base: "none", md: "translateY(-6rem)" }}
             justifyContent={"flex-end"}
           >
             <Image
               rounded={"3xl"}
-              width={"50%"}
+              width={{ base: "100%", md: "50%" }}
               objectFit={"cover"}
               src={"assets/section/sectionImage1.png"}
             />
@@ -135,7 +135,7 @@ const BannerSection = ({ bgImage }) => {
               and Pottery
             </Heading>
             <Text
-              maxW={"50%"}
+              width={{ base: "100%", md: "50%" }}
               mb={5}
               textAlign={{
                 base: "center",
@@ -176,12 +176,12 @@ const BannerSection = ({ bgImage }) => {
           <Flex
             w="full"
             h="full"
-            transform={"translateY(6rem)"}
+            transform={{ base: "none", md: "translateY(6rem)" }}
             justifyContent={"flex-start"}
           >
             <Image
               rounded={"3xl"}
-              width={"50%"}
+              width={{ base: "100%", md: "50%" }}
               objectFit={"cover"}
               src={"assets/section/sectionImage1.png"}
             />

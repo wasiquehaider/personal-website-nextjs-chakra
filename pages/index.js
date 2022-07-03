@@ -20,6 +20,7 @@ import Layout from "../components/Layout";
 import { GalleryItem } from "../components/GalleryItem";
 import CollectionItem from "../components/CollectionItem";
 import ProductItem from "../components/ProductItem";
+import MerchantSlider from "../components/MerchantSlider";
 
 import { cards, collections } from "../data/mockData";
 import BannerSection from "../components/BannerSection";
@@ -29,18 +30,18 @@ export default function Index() {
   return (
     <Layout>
       <VStack>
-        <Hide above="md">
+        {/* <Hide above="md">
           <ResponsiveCarousel />
-        </Hide>
-        <Hide below="md">
-          <Stack>
-            <SimpleGrid columns={[1, 2, 4, 5]} spacing={0}>
-              {cards.map((item, index) => (
-                <GalleryItem key={index} item={item} />
-              ))}
-            </SimpleGrid>
-          </Stack>
-        </Hide>
+        </Hide> */}
+
+        <Stack>
+          <SimpleGrid columns={[1, 2, 4, 5]} spacing={0}>
+            {cards.map((item, index) => (
+              <GalleryItem key={index} item={item} />
+            ))}
+          </SimpleGrid>
+        </Stack>
+
         <Stack my={20}>
           <Heading
             textAlign={"center"}
@@ -69,9 +70,12 @@ export default function Index() {
             ))}
           </SimpleGrid>
         </Stack>
-        {/* <Stack>
+        <Stack>
           <BannerSection />
-        </Stack> */}
+        </Stack>
+        <Flex width={"3xl"} display={{ base: "none", md: "flex" }}>
+          <MerchantSlider />
+        </Flex>
       </VStack>
     </Layout>
   );

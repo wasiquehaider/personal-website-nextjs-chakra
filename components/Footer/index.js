@@ -122,7 +122,7 @@ export default function LargeWithLogoLeft() {
     >
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
-          templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 1fr" }}
+          templateColumns={{ base: "1fr", md: "2fr 1fr 1fr 1fr" }}
           spacing={8}
         >
           <Stack spacing={6} borderRightStyle="dashed" borderRightWidth={1}>

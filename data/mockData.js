@@ -29,6 +29,26 @@ const cards = [
     price: "AED 120.00",
     image: "assets/image1.png",
   },
+  {
+    title: "Fahim Flower Arrangement Vase",
+    price: "AED 120.00",
+    image: "assets/image3.png",
+  },
+  {
+    title: "Fahim Flower Arrangement Vase",
+    price: "AED 120.00",
+    image: "assets/image4.png",
+  },
+  {
+    title: "Fahim Flower Arrangement Vase",
+    price: "AED 120.00",
+    image: "assets/image5.png",
+  },
+  {
+    title: "Fahim Flower Arrangement Vase",
+    price: "AED 120.00",
+    image: "assets/image1.png",
+  },
 ];
 
 const collections = [

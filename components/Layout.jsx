@@ -8,7 +8,7 @@ export default function Layout({ props, children }) {
     <>
       <Box>
         <NavBar />
-        <Center>{children}</Center>
+        {children}
         <AdBanner bgImage={"url(curve_image.png)"} />
         <Stack>
           {/* <Image

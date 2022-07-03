@@ -24,7 +24,7 @@ export default function CollectionItem({ item }) {
         <Box rounded={"lg"} pos={"relative"}>
           <Image
             rounded={"3xl"}
-            width={"15rem"}
+            width={"100%"}
             height={"12rem"}
             objectFit={"cover"}
             src={item.image}
