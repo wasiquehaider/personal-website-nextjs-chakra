@@ -127,7 +127,7 @@ const BannerSection = ({ bgImage }) => {
             md: 24,
           }}
         >
-          <Box>
+          <Flex flexDirection="column" alignItems={"end"}>
             <Heading color={"white"} fontSize={theme.fontSizes["2xl"]}>
               Art Ceramic
             </Heading>
@@ -172,7 +172,7 @@ const BannerSection = ({ bgImage }) => {
                 </Button>
               </Box>
             </Stack>
-          </Box>
+          </Flex>
           <Flex
             w="full"
             h="full"

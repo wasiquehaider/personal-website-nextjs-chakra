@@ -34,7 +34,7 @@ export default function Index() {
           <ResponsiveCarousel />
         </Hide> */}
 
-        <Stack>
+        <Stack marginBottom={{ base: 0, md: "5rem" }}>
           <SimpleGrid columns={[1, 2, 4, 5]} spacing={0}>
             {cards.map((item, index) => (
               <GalleryItem key={index} item={item} />
@@ -42,7 +42,7 @@ export default function Index() {
           </SimpleGrid>
         </Stack>
 
-        <Stack my={20}>
+        <Stack marginBottom={{ base: 0, md: "5rem" }}>
           <Heading
             textAlign={"center"}
             size="lg"
@@ -56,7 +56,7 @@ export default function Index() {
             ))}
           </SimpleGrid>
         </Stack>
-        <Stack>
+        <Stack marginBottom={{ base: 0, md: "5rem" }}>
           <Heading
             textAlign={"center"}
             size="lg"
